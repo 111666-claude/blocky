@@ -34,6 +34,8 @@ sizes: build
 	gzip -c9 _image_pixels_excludes.svg > _image_pixels_excludes.svg.gz
 	./blocky -optimize rects $(IMAGE) > _image_rects_excludes.svg
 	gzip -c9 _image_rects_excludes.svg > _image_rects_excludes.svg.gz
+	./blocky -tiles 8 $(IMAGE) > _image_tiles.svg
+	gzip -c9 _image_tiles.svg > _image_tiles.svg.gz
 	du -b $(IMAGE) _image*
 	rm _image*
 .PHONY: sizes
